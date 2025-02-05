@@ -1,0 +1,37 @@
+The solution addresses the specificity issue by using the `!important` flag or by restructuring the CSS to avoid the conflict:
+
+**Solution 1: Using `!important` (generally discouraged):**
+
+```css
+.container {
+  font-size: 16px;
+}
+
+.container p {
+  font-size: 18px !important;
+}
+
+.container .special p {
+  font-size: 14px;
+}
+```
+
+**Solution 2: Restructuring CSS (recommended):**
+
+This approach provides better maintainability and readability.
+
+```css
+.container {
+  font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.special p {
+  font-size: 14px;
+}
+```
+
+The second solution prioritizes better CSS structure.  Avoid using `!important` unless absolutely necessary because it can make CSS harder to maintain and debug in the long run.
