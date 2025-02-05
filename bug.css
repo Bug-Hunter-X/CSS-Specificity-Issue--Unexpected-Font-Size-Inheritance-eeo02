@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon bug related to specificity and inheritance:
+
+```css
+.container {
+  font-size: 16px;
+}
+
+.container p {
+  font-size: 18px;
+}
+
+.container .special p {
+  font-size: 14px; /* This is unexpected */
+}
+```
+
+The expectation is that the paragraph within the `special` class would inherit the `18px` font size from its parent, `.container p`. However, due to CSS specificity rules, the `14px` declaration in `.container .special p` overrides the inherited value, creating an unexpected outcome.
